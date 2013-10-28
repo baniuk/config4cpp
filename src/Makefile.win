@@ -29,6 +29,7 @@ LIB_HDR_FILES	= \
 		ConfigLex.h \
 		SchemaTypeBoolean.h \
 		SchemaTypeDummy.h \
+		SchemaTypeDurationMicroseconds.h \
 		SchemaTypeDurationMilliseconds.h \
 		SchemaTypeDurationSeconds.h \
 		SchemaTypeEnum.h \
@@ -73,6 +74,7 @@ LIB_OBJ_FILES	= \
 		StringVector.obj \
 		SchemaType.obj \
 		SchemaTypeBoolean.obj \
+		SchemaTypeDurationMicroseconds.obj \
 		SchemaTypeDurationMilliseconds.obj \
 		SchemaTypeDurationSeconds.obj \
 		SchemaTypeEnum.obj \
