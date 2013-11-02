@@ -10,3 +10,10 @@
 *.lai
 *.la
 *.a
+*.lib
+*.pdb
+
+# cmake stuff
+CMakeFiles
+CMakeCache.txt
+*.cmake
