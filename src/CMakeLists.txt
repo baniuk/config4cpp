@@ -49,3 +49,27 @@ add_library(config4cpp STATIC
 set_target_properties(config4cpp
 	PROPERTIES
 	ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib")
+
+# build config2cpp.exe
+add_executable(config2cpp config2cpp-main.cpp Config2Cpp.cpp)
+add_dependencies(config2cpp config4cpp)	
+target_link_libraries(config2cpp config4cpp)
+set_target_properties(config2cpp
+	PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
+	
+# build config4cpp.exe
+add_executable(config4cpp.exe Config4Cpp.cpp)
+add_dependencies(config4cpp.exe config4cpp)	
+target_link_libraries(config4cpp.exe config4cpp)
+set_target_properties(config4cpp.exe
+	PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
+	
+# build config2cpp-nocheck.exe.exe
+add_executable(config2cpp-nocheck config2cpp-nocheck-main.cpp Config2Cpp.cpp)
+add_dependencies(config2cpp-nocheck config4cpp)	
+target_link_libraries(config2cpp-nocheck config4cpp)
+set_target_properties(config2cpp-nocheck
+	PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")

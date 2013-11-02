@@ -71,6 +71,16 @@ rebuild_cache:
 rebuild_cache\fast: rebuild_cache
 .PHONY : rebuild_cache\fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	d:\Programy\CMake2.8\bin\ctest.exe --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test\fast: test
+.PHONY : test\fast
+
 # The main all target
 all: cmake_check_build_system
 	cd H:\Projekty\config4cpp
@@ -113,6 +123,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+src\CMakeFiles\config2cpp.dir\rule:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\rule
+	cd H:\Projekty\config4cpp\src
+.PHONY : src\CMakeFiles\config2cpp.dir\rule
+
+# Convenience name for target.
+config2cpp: src\CMakeFiles\config2cpp.dir\rule
+.PHONY : config2cpp
+
+# fast build rule for target.
+config2cpp\fast:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\build
+	cd H:\Projekty\config4cpp\src
+.PHONY : config2cpp\fast
+
+# Convenience name for target.
+src\CMakeFiles\config2cpp-nocheck.dir\rule:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\rule
+	cd H:\Projekty\config4cpp\src
+.PHONY : src\CMakeFiles\config2cpp-nocheck.dir\rule
+
+# Convenience name for target.
+config2cpp-nocheck: src\CMakeFiles\config2cpp-nocheck.dir\rule
+.PHONY : config2cpp-nocheck
+
+# fast build rule for target.
+config2cpp-nocheck\fast:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp-nocheck.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\build
+	cd H:\Projekty\config4cpp\src
+.PHONY : config2cpp-nocheck\fast
+
+# Convenience name for target.
 src\CMakeFiles\config4cpp.dir\rule:
 	cd H:\Projekty\config4cpp
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.dir\rule
@@ -129,6 +175,57 @@ config4cpp\fast:
 	$(MAKE) -f src\CMakeFiles\config4cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.dir\build
 	cd H:\Projekty\config4cpp\src
 .PHONY : config4cpp\fast
+
+# Convenience name for target.
+src\CMakeFiles\config4cpp.exe.dir\rule:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.exe.dir\rule
+	cd H:\Projekty\config4cpp\src
+.PHONY : src\CMakeFiles\config4cpp.exe.dir\rule
+
+# Convenience name for target.
+config4cpp.exe: src\CMakeFiles\config4cpp.exe.dir\rule
+.PHONY : config4cpp.exe
+
+# fast build rule for target.
+config4cpp.exe\fast:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config4cpp.exe.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.exe.dir\build
+	cd H:\Projekty\config4cpp\src
+.PHONY : config4cpp.exe\fast
+
+Config2Cpp.obj: Config2Cpp.cpp.obj
+.PHONY : Config2Cpp.obj
+
+# target to build an object file
+Config2Cpp.cpp.obj:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\Config2Cpp.cpp.obj
+	$(MAKE) -f src\CMakeFiles\config2cpp-nocheck.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\Config2Cpp.cpp.obj
+	cd H:\Projekty\config4cpp\src
+.PHONY : Config2Cpp.cpp.obj
+
+Config2Cpp.i: Config2Cpp.cpp.i
+.PHONY : Config2Cpp.i
+
+# target to preprocess a source file
+Config2Cpp.cpp.i:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\Config2Cpp.cpp.i
+	$(MAKE) -f src\CMakeFiles\config2cpp-nocheck.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\Config2Cpp.cpp.i
+	cd H:\Projekty\config4cpp\src
+.PHONY : Config2Cpp.cpp.i
+
+Config2Cpp.s: Config2Cpp.cpp.s
+.PHONY : Config2Cpp.s
+
+# target to generate assembly for a file
+Config2Cpp.cpp.s:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\Config2Cpp.cpp.s
+	$(MAKE) -f src\CMakeFiles\config2cpp-nocheck.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\Config2Cpp.cpp.s
+	cd H:\Projekty\config4cpp\src
+.PHONY : Config2Cpp.cpp.s
 
 ConfigItem.obj: ConfigItem.cpp.obj
 .PHONY : ConfigItem.obj
@@ -1330,6 +1427,96 @@ UidIdentifierProcessor.cpp.s:
 	cd H:\Projekty\config4cpp\src
 .PHONY : UidIdentifierProcessor.cpp.s
 
+config2cpp-main.obj: config2cpp-main.cpp.obj
+.PHONY : config2cpp-main.obj
+
+# target to build an object file
+config2cpp-main.cpp.obj:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\config2cpp-main.cpp.obj
+	cd H:\Projekty\config4cpp\src
+.PHONY : config2cpp-main.cpp.obj
+
+config2cpp-main.i: config2cpp-main.cpp.i
+.PHONY : config2cpp-main.i
+
+# target to preprocess a source file
+config2cpp-main.cpp.i:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\config2cpp-main.cpp.i
+	cd H:\Projekty\config4cpp\src
+.PHONY : config2cpp-main.cpp.i
+
+config2cpp-main.s: config2cpp-main.cpp.s
+.PHONY : config2cpp-main.s
+
+# target to generate assembly for a file
+config2cpp-main.cpp.s:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\config2cpp-main.cpp.s
+	cd H:\Projekty\config4cpp\src
+.PHONY : config2cpp-main.cpp.s
+
+config2cpp-nocheck-main.obj: config2cpp-nocheck-main.cpp.obj
+.PHONY : config2cpp-nocheck-main.obj
+
+# target to build an object file
+config2cpp-nocheck-main.cpp.obj:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp-nocheck.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\config2cpp-nocheck-main.cpp.obj
+	cd H:\Projekty\config4cpp\src
+.PHONY : config2cpp-nocheck-main.cpp.obj
+
+config2cpp-nocheck-main.i: config2cpp-nocheck-main.cpp.i
+.PHONY : config2cpp-nocheck-main.i
+
+# target to preprocess a source file
+config2cpp-nocheck-main.cpp.i:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp-nocheck.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\config2cpp-nocheck-main.cpp.i
+	cd H:\Projekty\config4cpp\src
+.PHONY : config2cpp-nocheck-main.cpp.i
+
+config2cpp-nocheck-main.s: config2cpp-nocheck-main.cpp.s
+.PHONY : config2cpp-nocheck-main.s
+
+# target to generate assembly for a file
+config2cpp-nocheck-main.cpp.s:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config2cpp-nocheck.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\config2cpp-nocheck-main.cpp.s
+	cd H:\Projekty\config4cpp\src
+.PHONY : config2cpp-nocheck-main.cpp.s
+
+config4cpp.obj: config4cpp.cpp.obj
+.PHONY : config4cpp.obj
+
+# target to build an object file
+config4cpp.cpp.obj:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config4cpp.exe.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.exe.dir\config4cpp.cpp.obj
+	cd H:\Projekty\config4cpp\src
+.PHONY : config4cpp.cpp.obj
+
+config4cpp.i: config4cpp.cpp.i
+.PHONY : config4cpp.i
+
+# target to preprocess a source file
+config4cpp.cpp.i:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config4cpp.exe.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.exe.dir\config4cpp.cpp.i
+	cd H:\Projekty\config4cpp\src
+.PHONY : config4cpp.cpp.i
+
+config4cpp.s: config4cpp.cpp.s
+.PHONY : config4cpp.s
+
+# target to generate assembly for a file
+config4cpp.cpp.s:
+	cd H:\Projekty\config4cpp
+	$(MAKE) -f src\CMakeFiles\config4cpp.exe.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.exe.dir\config4cpp.cpp.s
+	cd H:\Projekty\config4cpp\src
+.PHONY : config4cpp.cpp.s
+
 platform.obj: platform.cpp.obj
 .PHONY : platform.obj
 
@@ -1396,9 +1583,16 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
+	@echo ... config2cpp
+	@echo ... config2cpp-nocheck
 	@echo ... config4cpp
+	@echo ... config4cpp.exe
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... test
+	@echo ... Config2Cpp.obj
+	@echo ... Config2Cpp.i
+	@echo ... Config2Cpp.s
 	@echo ... ConfigItem.obj
 	@echo ... ConfigItem.i
 	@echo ... ConfigItem.s
@@ -1519,6 +1713,15 @@ help:
 	@echo ... UidIdentifierProcessor.obj
 	@echo ... UidIdentifierProcessor.i
 	@echo ... UidIdentifierProcessor.s
+	@echo ... config2cpp-main.obj
+	@echo ... config2cpp-main.i
+	@echo ... config2cpp-main.s
+	@echo ... config2cpp-nocheck-main.obj
+	@echo ... config2cpp-nocheck-main.i
+	@echo ... config2cpp-nocheck-main.s
+	@echo ... config4cpp.obj
+	@echo ... config4cpp.i
+	@echo ... config4cpp.s
 	@echo ... platform.obj
 	@echo ... platform.i
 	@echo ... platform.s

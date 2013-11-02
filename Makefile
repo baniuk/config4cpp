@@ -71,6 +71,16 @@ rebuild_cache:
 rebuild_cache\fast: rebuild_cache
 .PHONY : rebuild_cache\fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	d:\Programy\CMake2.8\bin\ctest.exe --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test\fast: test
+.PHONY : test\fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start H:\Projekty\config4cpp\CMakeFiles H:\Projekty\config4cpp\CMakeFiles\progress.marks
@@ -103,6 +113,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named config2cpp
+
+# Build rule for target.
+config2cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) config2cpp
+.PHONY : config2cpp
+
+# fast build rule for target.
+config2cpp\fast:
+	$(MAKE) -f src\CMakeFiles\config2cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp.dir\build
+.PHONY : config2cpp\fast
+
+#=============================================================================
+# Target rules for targets named config2cpp-nocheck
+
+# Build rule for target.
+config2cpp-nocheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) config2cpp-nocheck
+.PHONY : config2cpp-nocheck
+
+# fast build rule for target.
+config2cpp-nocheck\fast:
+	$(MAKE) -f src\CMakeFiles\config2cpp-nocheck.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config2cpp-nocheck.dir\build
+.PHONY : config2cpp-nocheck\fast
+
+#=============================================================================
 # Target rules for targets named config4cpp
 
 # Build rule for target.
@@ -115,6 +151,71 @@ config4cpp\fast:
 	$(MAKE) -f src\CMakeFiles\config4cpp.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.dir\build
 .PHONY : config4cpp\fast
 
+#=============================================================================
+# Target rules for targets named config4cpp.exe
+
+# Build rule for target.
+config4cpp.exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) config4cpp.exe
+.PHONY : config4cpp.exe
+
+# fast build rule for target.
+config4cpp.exe\fast:
+	$(MAKE) -f src\CMakeFiles\config4cpp.exe.dir\build.make /nologo -$(MAKEFLAGS) src\CMakeFiles\config4cpp.exe.dir\build
+.PHONY : config4cpp.exe\fast
+
+#=============================================================================
+# Target rules for targets named extended-schema-validator
+
+# Build rule for target.
+extended-schema-validator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) extended-schema-validator
+.PHONY : extended-schema-validator
+
+# fast build rule for target.
+extended-schema-validator\fast:
+	$(MAKE) -f demos\extended-schema-validator\CMakeFiles\extended-schema-validator.dir\build.make /nologo -$(MAKEFLAGS) demos\extended-schema-validator\CMakeFiles\extended-schema-validator.dir\build
+.PHONY : extended-schema-validator\fast
+
+#=============================================================================
+# Target rules for targets named log-level
+
+# Build rule for target.
+log-level: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) log-level
+.PHONY : log-level
+
+# fast build rule for target.
+log-level\fast:
+	$(MAKE) -f demos\log-level\CMakeFiles\log-level.dir\build.make /nologo -$(MAKEFLAGS) demos\log-level\CMakeFiles\log-level.dir\build
+.PHONY : log-level\fast
+
+#=============================================================================
+# Target rules for targets named recipes
+
+# Build rule for target.
+recipes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) recipes
+.PHONY : recipes
+
+# fast build rule for target.
+recipes\fast:
+	$(MAKE) -f demos\recipes\CMakeFiles\recipes.dir\build.make /nologo -$(MAKEFLAGS) demos\recipes\CMakeFiles\recipes.dir\build
+.PHONY : recipes\fast
+
+#=============================================================================
+# Target rules for targets named test-schema-types
+
+# Build rule for target.
+test-schema-types: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) test-schema-types
+.PHONY : test-schema-types
+
+# fast build rule for target.
+test-schema-types\fast:
+	$(MAKE) -f tests\schema-types\CMakeFiles\test-schema-types.dir\build.make /nologo -$(MAKEFLAGS) tests\schema-types\CMakeFiles\test-schema-types.dir\build
+.PHONY : test-schema-types\fast
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -123,7 +224,15 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... test
+	@echo ... config2cpp
+	@echo ... config2cpp-nocheck
 	@echo ... config4cpp
+	@echo ... config4cpp.exe
+	@echo ... extended-schema-validator
+	@echo ... log-level
+	@echo ... recipes
+	@echo ... test-schema-types
 .PHONY : help
 
 
