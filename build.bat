@@ -1,5 +1,8 @@
 echo off
 call clean.bat
-cmake -G "NMake Makefiles"
+mkdir bin
+cd bin
+cmake -DCMAKE_BUILD_TYPE=Release -G "NMake Makefiles" ..\
 nmake
 ctest --verbose
+cd ..
